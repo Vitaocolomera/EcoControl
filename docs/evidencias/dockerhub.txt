@@ -1,0 +1,17 @@
+﻿Docker Hub:
+https://hub.docker.com/r/victorcolomera/ecocontrol-api
+
+Imagem latest:
+docker.io/victorcolomera/ecocontrol-api:latest
+
+Imagem staging:
+docker.io/victorcolomera/ecocontrol-api:staging
+
+GitHub:
+https://github.com/Vitaocolomera/EcoControl
+
+DOCKERHUB_USERNAME:
+CONFIGURADO
+
+DOCKERHUB_TOKEN:
+CONFIGURADO

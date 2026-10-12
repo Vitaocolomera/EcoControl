@@ -1,0 +1,8 @@
+﻿Regiao:
+North Central US
+
+Staging:
+https://ecocontrol-stg-vitaocolomera-f107ef00.azurewebsites.net
+
+Production:
+https://ecocontrol-prd-vitaocolomera-f107ef00.azurewebsites.net

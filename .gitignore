@@ -1,0 +1,37 @@
+# .NET build artifacts
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio / IDE
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+.idea/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# Logs and tests
+*.log
+logs/
+TestResults/
+**/TestResults/
+coverage/
+coverage.cobertura.xml
+
+# Publish/artifacts
+publish/
+artifacts/
+
+# Temporary / OS
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

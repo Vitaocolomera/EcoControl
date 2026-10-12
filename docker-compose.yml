@@ -1,0 +1,55 @@
+﻿services:
+  oracle-db:
+    image: gvenzl/oracle-free:latest
+    container_name: ecocontrol-oracle
+    restart: unless-stopped
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_SYS_PASSWORD}
+      APP_USER: ${APP_DB_USER}
+      APP_USER_PASSWORD: ${APP_DB_PASSWORD}
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+    networks:
+      - ecocontrol-network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+
+  ecocontrol-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecocontrol-api
+    restart: unless-stopped
+    depends_on:
+      oracle-db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+      ConnectionStrings__OracleConnection: "User Id=${APP_DB_USER};Password=${APP_DB_PASSWORD};Data Source=oracle-db:1521/FREEPDB1;"
+      BasicAuth__AdminUser: ${BASIC_AUTH_ADMIN_USER}
+      BasicAuth__AdminPassword: ${BASIC_AUTH_ADMIN_PASSWORD}
+      BasicAuth__ViewerUser: ${BASIC_AUTH_VIEWER_USER}
+      BasicAuth__ViewerPassword: ${BASIC_AUTH_VIEWER_PASSWORD}
+      Database__ApplyMigrations: "true"
+      Database__SeedData: "true"
+    ports:
+      - "8081:8080"
+    networks:
+      - ecocontrol-network
+
+volumes:
+  oracle_data:
+    name: ecocontrol-oracle-data
+
+networks:
+  ecocontrol-network:
+    name: ecocontrol-network
+    driver: bridge
+

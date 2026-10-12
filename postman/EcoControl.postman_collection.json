@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "a5678fc5-2dd2-47fb-b495-92e9c276dea6",
+    "name": "EcoControl-DotNet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43331875",
+    "_collection_link": "https://go.postman.co/collection/43331875-a5678fc5-2dd2-47fb-b495-92e9c276dea6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar Equipamentos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/Equipamentos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "Equipamentos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Equipamento por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/Equipamentos/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "Equipamentos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Equipamento",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{admin_user}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{admin_password}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nomeEquipamento\": \"Compressor Industrial\",\r\n  \"setor\": \"Producao\",\r\n  \"potenciaKw\": 15.5,\r\n  \"statusAtual\": \"LIGADO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/Equipamentos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "Equipamentos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Equipamento",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{admin_user}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{admin_password}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nomeEquipamento\": \"Compressor Industrial\",\r\n  \"setor\": \"Producao\",\r\n  \"potenciaKw\": 15.5,\r\n  \"statusAtual\": \"LIGADO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/Equipamentos/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "Equipamentos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar Equipamento",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{admin_user}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{admin_password}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/Equipamentos/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "Equipamentos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Leituras do Sensor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/LeiturasSensor/equipamento/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "LeiturasSensor",
+            "equipamento",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar Leitura",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/LeiturasSensor",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "LeiturasSensor"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Logs Desligamento",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/LogsDesligamento",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "LogsDesligamento"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Consumo Energia",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/ConsumoEnergia",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "ConsumoEnergia"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Resumo Consumo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/ConsumoEnergia/resumo",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "ConsumoEnergia",
+            "resumo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Horarios por Equipamento",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Criar Horario",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{admin_user}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{admin_password}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idEquipamento\": 1,\r\n  \"diaSemana\": \"SEG-SEX\",\r\n  \"horaInicio\": 7.0,\r\n  \"horaFim\": 18.0,\r\n  \"tempoMaxOcioso\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/HorariosOperacao",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "HorariosOperacao"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "admin_user",
+      "value": "admin",
+      "type": "string"
+    },
+    {
+      "key": "admin_password",
+      "value": "CHANGE_ME",
+      "type": "string"
+    }
+  ]
+}

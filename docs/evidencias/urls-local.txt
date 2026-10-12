@@ -1,0 +1,3 @@
+﻿Porta API: 8081
+Health: http://localhost:8081/health
+Swagger: http://localhost:8081/swagger
